@@ -1,0 +1,44 @@
+/* 
+ * Archivo para fuentes personalizadas
+ * Aquí puedes agregar tus fuentes descargadas
+ */
+
+/* Ejemplo de cómo agregar una fuente personalizada:
+@font-face {
+  font-family: 'MiFuentePersonalizada';
+  src: url('./mi-fuente.woff2') format('woff2'),
+       url('./mi-fuente.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
+@font-face {
+  font-family: 'valorant';
+  src: url('./Valorant Font.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* Variables CSS para fuentes personalizadas */
+:root {
+  --font-primary: 'Open Sans', sans-serif;
+  --font-secondary: 'Inter', sans-serif;
+  --font-custom: 'valorant', sans-serif; /* Cambiar por tu fuente personalizada */
+}
+
+/* Clases utilitarias para fuentes */
+.font-primary {
+  font-family: var(--font-primary);
+}
+
+.font-secondary {
+  font-family: var(--font-secondary);
+}
+
+.font-custom {
+  font-family: var(--font-custom);
+}

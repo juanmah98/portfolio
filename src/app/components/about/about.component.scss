@@ -1,0 +1,45 @@
+// Estilos personalizados para about
+// Bootstrap maneja la mayoría de estilos
+.about-section {
+  background-color: var(--secondary-color);
+}
+
+.progress-bar {
+  transition: width 1s ease-in-out;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+}
+
+// Estilos para las tarjetas de herramientas
+.tool-card {
+  background-color: var(--primary-color);
+  border-radius: 12px;
+  padding: 20px;
+  height: 80px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tool-card:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(236, 129, 27, 0.3);
+}
+
+.tool-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); // Convierte la imagen a blanco
+  transition: transform 0.3s ease;
+}
+
+.tool-card:hover .tool-icon {
+  transform: scale(1.1);
+}

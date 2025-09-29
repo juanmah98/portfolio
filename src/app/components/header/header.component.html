@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top glass-navbar" [class.scrolled]="isScrolled">
+  <div class="container-fluid">
+    <!-- Brand -->
+ <!--    <a class="navbar-brand fw-bold fs-4 text-primary" href="#home">
+      Juan Manuel
+    </a> -->
+
+    <!-- Toggle button -->
+    <button 
+      class="navbar-toggler" 
+      type="button" 
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="isMenuOpen"
+      aria-controls="navbarNav"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navigation menu -->
+    <div 
+      class="collapse navbar-collapse" 
+      id="navbarNav"
+      [class.show]="isMenuOpen">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" href="#home" (click)="closeMenu()">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" href="#about" (click)="closeMenu()">Sobre mí</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" href="#projects" (click)="closeMenu()">Proyectos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" href="#contact" (click)="closeMenu()">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

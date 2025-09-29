@@ -1,0 +1,83 @@
+// Estilos personalizados para el header con efecto de cristal
+
+.glass-navbar {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+// Efecto cuando se hace scroll
+.glass-navbar.scrolled {
+  background: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.navbar{
+    font-family: var(--font-primary);
+}
+
+.navbar-brand {
+  transition: transform 0.3s ease;
+  color: var(--primary-color) !important;
+  font-weight: 700;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+  color: var(--primary-color) !important;
+}
+
+.nav-link {
+  transition: all 0.3s ease;
+  position: relative;
+  color: var(--success-color) !important;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--primary-color);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+// Estilos para el menú móvil
+/* .navbar-collapse {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 15px;
+} */
+
+// Botón hamburguesa
+.navbar-toggler {
+  border: none;
+  color: var(--primary-color);
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(236, 129, 27, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
