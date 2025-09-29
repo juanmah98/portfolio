@@ -1,0 +1,111 @@
+<section id="info" class="py-5 bg-primary text-white">
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Experiencia -->
+      <div class="col-12 mb-5">
+        <div class="info-section experience-section">
+          <h4 class="text-white mb-4">
+            <i class="bi bi-briefcase me-2"></i>
+            Experiencia
+          </h4>
+          <div class="row g-4">
+            <div class="col-lg-6 col-md-6 col-12" *ngFor="let exp of experiences">
+              <div class="experience-card">
+                <div class="experience-header">
+                  <div class="experience-title">
+                    <h5 class="text-white mb-1">{{ exp.position }}</h5>
+                    <p class="text-light mb-2">{{ exp.company }}</p>
+                  </div>
+                  <div class="experience-status">
+                    <span class="badge" [class]="exp.current ? 'bg-success' : 'bg-primary'">
+                      {{ exp.current ? 'Actual' : 'Finalizado' }}
+                    </span>
+                  </div>
+                </div>
+                <div class="experience-dates">
+                  <small class="text-light">
+                    {{ exp.startDate | date:'MMM yyyy' }} - 
+                    {{ exp.current ? 'Presente' : (exp.endDate | date:'MMM yyyy') }}
+                  </small>
+                </div>
+                <div class="experience-description" *ngIf="exp.description">
+                  <p class="text-light small">{{ exp.description }}</p>
+                </div>
+                <div class="experience-tech" *ngIf="exp.technologies.length > 0 && exp.technologies[0] !== ''">
+                  <div class="tech-tags">
+                    <span class="badge bg-light text-dark me-1 mb-1" 
+                          *ngFor="let tech of exp.technologies.slice(0, exp.technologies.length)">
+                      {{ tech }}
+                    </span>
+                    <!-- <span class="badge bg-secondary text-white" 
+                          *ngIf="exp.technologies.length > 4">
+                      +{{ exp.technologies.length - 4 }} más
+                    </span> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Idiomas -->
+      <div class="col-12 mb-5">
+        <div class="info-section">
+          <h4 class="text-white mb-4 text-center">
+            <i class="bi bi-translate me-2"></i>
+            Idiomas
+          </h4>
+          <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-8 col-12">
+              <div class="languages-list">
+                <div class="language-item" *ngFor="let lang of languages">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="text-white">{{ lang.name }}</span>
+                    <span class="badge bg-light text-dark">{{ lang.level }}</span>
+                  </div>
+                  <div class="progress" style="height: 4px;">
+                    <div 
+                      class="progress-bar bg-light" 
+                      [style.width.%]="lang.proficiency">
+                    </div>
+                  </div>
+                  <small class="text-light">{{ lang.proficiency }}% dominio</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Estudios -->
+      <div class="col-12 mb-5">
+        <div class="info-section education-section">
+          <h4 class="text-white mb-4">
+            <i class="bi bi-mortarboard me-2"></i>
+            Formación
+          </h4>
+          <div class="row g-4">
+            <div class="col-lg-6 col-md-6 col-12" *ngFor="let edu of education">
+              <div class="education-card">
+                <div class="education-header">
+                  <h6 class="text-white mb-1">{{ edu.degree }}</h6>
+                  <p class="text-light mb-2">{{ edu.institution }}</p>
+                </div>
+                <div class="education-dates">
+                  <small class="text-light">
+                    {{ edu.startDate | date:'MMM yyyy' }} - 
+                    {{ edu.current ? 'Presente' : (edu.endDate | date:'MMM yyyy') }}
+                  </small>
+                </div>
+                <div class="education-description" *ngIf="edu.description">
+                  <p class="text-light small">{{ edu.description }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

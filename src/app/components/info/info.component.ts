@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PortfolioService } from '../../services/portfolio.service';
-import { Skill, Tools, Experience, Education, Language } from '../../models/portfolio.model';
+import { Experience, Education, Language } from '../../models/portfolio.model';
 
 @Component({
-  selector: 'app-about',
+  selector: 'app-info',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './about.component.html',
-  styleUrl: './about.component.scss'
+  templateUrl: './info.component.html',
+  styleUrl: './info.component.scss'
 })
-export class AboutComponent implements OnInit {
-  skills: Skill[] = [];
-  tools: Tools[] = [];
+export class InfoComponent implements OnInit {
   experiences: Experience[] = [];
   education: Education[] = [];
   languages: Language[] = [];
@@ -20,14 +18,6 @@ export class AboutComponent implements OnInit {
   constructor(private portfolioService: PortfolioService) {}
 
   ngOnInit() {
-    this.portfolioService.getSkills().subscribe(skills => {
-      this.skills = skills;
-    });
-    
-    this.portfolioService.getTools().subscribe(tools => {
-      this.tools = tools;
-    });
-
     this.portfolioService.getExperience().subscribe(experiences => {
       this.experiences = experiences;
     });
