@@ -208,7 +208,13 @@
   }
   
   .project-image {
-    height: 250px;
+    min-height: 150px;
+  }
+
+  .project-image-container{
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    min-height: 150px;
   }
 }
 
@@ -221,6 +227,12 @@
   .project-links .btn {
     width: 100%;
     max-width: 200px;
+  }
+
+  .project-image {
+    min-height: 300px;
+    height: 150px;
+    
   }
 }
 
