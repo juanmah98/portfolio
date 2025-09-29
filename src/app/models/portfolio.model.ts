@@ -57,12 +57,9 @@ export interface Education {
   description?: string;
 }
 
-export interface Education {
+export interface Language {
   id: string;
-  institution: string;
-  degree: string;
-  startDate: string;
-  endDate?: string;
-  current: boolean;
-  description?: string;
+  name: string;
+  level: string;
+  proficiency: number; // 1-100
 }

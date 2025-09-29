@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { PersonalInfo, SocialLink, Skill, Project, Experience, Education, Tools } from '../models/portfolio.model';
+import { PersonalInfo, SocialLink, Skill, Project, Experience, Education, Tools, Language } from '../models/portfolio.model';
 
 @Injectable({
   providedIn: 'root'
@@ -83,7 +83,7 @@ export class PortfolioService {
         {
           id: '1',
           title: 'Faneca',
-          description: 'Market place de productos agricolas en formato app web',
+          description: 'Marketplace de productos agrícolas en formato app web',
           image: 'assets/images/proyects/faneca-iphone.png',
           technologies: ['Angular', 'Bootstrap', 'Node.js', 'Supabase', 'Firebase', 'OpenStreetMap', 'Email sender', 'Google analytics', 'Github'],
           liveUrl: 'https://faneca.app/',
@@ -93,7 +93,7 @@ export class PortfolioService {
         {
           id: '2',
           title: 'Fidelity cards',
-          description: 'Aplicacion web de fidelidad de clientes digiral con QR',
+          description: 'Aplicación web de fidelización de clientes digital con QR',
           image: 'assets/images/proyects/fidelity.png',
           technologies: ['Angular', 'Bootstrap', 'Node.js', 'Supabase', 'Firebase', 'Qr code', 'Email sender', 'Qz try', 'Google analytics', 'Github'],
           liveUrl: 'https://fidecards.com/',
@@ -123,7 +123,7 @@ export class PortfolioService {
           {
             id: '5',
             title: 'Tera app',
-            description: 'App movil para una fintech desarrollada con flutter',
+            description: 'App móvil para una fintech desarrollada con flutter',
             image: 'assets/images/proyects/Tera.png',
             technologies: ['Flutter', 'Dart', 'Firebase', 'Android Studio', 'GitLab', 'Trello'],
             liveUrl: 'https://www.linkedin.com/company/sg-financial-technology/',
@@ -133,7 +133,7 @@ export class PortfolioService {
           {
             id: '6',
             title: 'PelisUp',
-            description: 'Proyecto web de peliculas y series. Desafio de curso de Angular con "Folcode"',
+            description: 'Proyecto web de películas y series. Desafío de curso de Angular con "Folcode"',
             image: 'assets/images/proyects/PelisUp.png',
             technologies: ['Angular', 'Node.js', 'Vercel'],
             liveUrl: 'https://nuevo-theta.vercel.app/',
@@ -168,25 +168,66 @@ export class PortfolioService {
 
   getExperience(): Observable<Experience[]> {
     const experience: Experience[] = [
-      {
-        id: '1',
-        company: 'Tech Solutions S.L.',
-        position: 'Desarrollador Full Stack',
-        startDate: '2022-01',
-        current: true,
-        description: 'Desarrollo de aplicaciones web y móviles usando tecnologías modernas',
-        technologies: ['Angular', 'React', 'Node.js', 'AWS']
-      },
+        {
+            id: '1',
+            company: 'Self Employed - part time',
+            position: 'Desarrollador web',
+            startDate: '2021-01',
+            current: true,
+            description: 'Desarrollo de aplicaciones web y móviles usando tecnologías modernas',
+            technologies: ['Angular 14, 18, 19', 'Node.js', 'Firebase',  'Supabase', 'Edge functions', 'Github', 'Figma', 'Email sender', 'Google analytics']
+          },
       {
         id: '2',
-        company: 'StartupXYZ',
-        position: 'Desarrollador Frontend',
-        startDate: '2020-06',
-        endDate: '2021-12',
+        company: 'La piazzetta',
+        position: 'Encargado de cafetería',
+        startDate: '2022-11',
+        current: true,
+        description: 'Encargado de cafetería. Atención al cliente, recepción de pedidos, manejo de caja, organización de horarios, pago de proveedores, pago de empleados, etc.',
+        technologies: ['']
+      },
+      
+      {
+        id: '3',
+        company: 'Makers',
+        position: 'Front-end Developer Flutter',
+        startDate: '2022-01',
+        endDate: '2022-08',
         current: false,
-        description: 'Desarrollo de interfaces de usuario y experiencia de usuario',
-        technologies: ['Angular', 'TypeScript', 'SCSS', 'RxJS']
-      }
+        description: 'Contribuí al desarrollo remoto de una aplicación de billetera virtual utilizando Flutter/Dart. Lideré la implementación de nuevos diseños, funcionalidades y rediseños de secciones, aplicando conexiones con APIs a través del método bloc.',
+        technologies: ['Flutter', 'Dart', 'Firebase', 'C#', 'Android Studio', 'GitLab', 'Trello']
+      },
+      {
+        id: '4',
+        company: 'San Juan TEC - Híbrido',
+        position: 'Instructor de curso. Fundamentos de Angular',
+        startDate: '2022-02',
+        endDate: '2022-08',
+        current: false,
+        description: 'Impartí conocimientos fundamentales del framework Angular a estudiantes. Facilité la instalación de Node.js y el CLI de Angular para los participantes. Introduje el uso de TypeScript para una implementación eficaz. Coordiné el despliegue de los proyectos finales en Vercel para su visualización en tiempo real.',
+        technologies: ['Angular 14', 'TypeScript', 'Firebase', 'Vercel', 'GitHub']
+      },
+      {
+        id: '5',
+        company: 'Rapanui Lomos',
+        position: 'Encargado de local gastronómico',
+        startDate: '2017-08',
+        endDate: '2022-02',
+        current: false,
+        description: 'Encargado de local gastronómico. Atención al cliente, recepción de pedidos, atención a meseros, etc.',
+        technologies: ['']
+      },
+      {
+        id: '6',
+        company: 'Trabajo Autónomo',
+        position: 'Técnico en Reparación y Mantenimiento de PC',
+        startDate: '2017-06',
+        endDate: '2020-06',
+        current: false,
+        description: 'Mantenimiento integral de computadoras de escritorio, notebooks y all-in-one. Especializado en formateo y instalación de sistemas operativos a medida. Instalación precisa de drivers y software según las preferencias del cliente.',
+        technologies: ['Windows', 'Linux', 'MacOS', 'Hardware', 'Software', 'Drivers', 'Formateo', 'Instalación de sistemas operativos', 'Instalación de software', 'Instalación de drivers']
+      },
+
     ];
     
     return of(experience);
@@ -196,15 +237,85 @@ export class PortfolioService {
     const education: Education[] = [
       {
         id: '1',
-        institution: 'Universidad Tecnológica',
-        degree: 'Ingeniería en Sistemas',
-        startDate: '2016-09',
-        endDate: '2020-06',
+        institution: 'Escuela Mastermedia',
+        degree: 'Master en diseño web y programación',
+        startDate: '2022-11',
+        endDate: '2023-11',
         current: false,
-        description: 'Especialización en desarrollo de software y arquitectura de sistemas'
+        description: 'Máster en diseño web y Programación Full Stack (DWP)'
+      },
+      {
+        id: '2',
+        institution: 'Folcademy',
+        degree: 'Front-end Developer',
+        startDate: '2022-01',
+        endDate: '2022-04',
+        current: false,
+        description: 'Curso orientado al desarrollo web front-end con Angular cli. Se realizaron tareas como creación de un proyecto desde 0 con Angular, implementación de servicios para consumir una API rest, desarrollo de inicio de sesión con Google y uso de una base de datos con Firebase'
+      },
+      {
+        id: '3',
+        institution: 'Folcademy',
+        degree: 'Backend developer',
+        startDate: '2021-08',
+        endDate: '2022-12',
+        current: false,
+        description: 'Tuvimos muchos desafíos cada semana muy interesantes, como proyecto final creamos una api rest, que puede almacenar datos de pacientes, médicos y generar turnos entre ellos.'
+      },
+      {
+        id: '4',
+        institution: 'San Juan TEC',
+        degree: 'Angular developer',
+        startDate: '2021-08',
+        endDate: '2022-12',
+        current: false,
+        description: 'Curso introductorio al framework Angular desde 0. Implementación de node.js y angular cli. Desarrollo de un proyecto final, encargado de crear el proyecto con angular, pasar archivos html, js y css. También conectar la api de la nasa y subirlo a firebase'
+      },
+      {
+        id: '5',
+        institution: 'Universidad Nacional de San Juan',
+        degree: 'Licenciatura en ciencias de la computacion',
+        startDate: '2017-03',
+        endDate: '2020-03',
+        current: false,
+        description: 'Introducción a la programación y al desarrollo de software'
+      },
+      {
+        id: '6',
+        institution: 'Instituto Cervantes',
+        degree: 'Certificado Reparación y Armado de PC.',
+        startDate: '2017-03',
+        endDate: '2017-12',
+        current: false,
+        description: 'Curso introductorio a la reparación y armado de pc'
       }
     ];
     
     return of(education);
+  }
+
+  getLanguages(): Observable<Language[]> {
+    const languages: Language[] = [
+      {
+        id: '1',
+        name: 'Español',
+        level: 'Nativo',
+        proficiency: 100
+      },
+      {
+        id: '2',
+        name: 'Inglés',
+        level: 'Intermedio',
+        proficiency: 60
+      },
+      {
+        id: '3',
+        name: 'Aleman',
+        level: 'Básico',
+        proficiency: 15
+      }
+    ];
+    
+    return of(languages);
   }
 }
