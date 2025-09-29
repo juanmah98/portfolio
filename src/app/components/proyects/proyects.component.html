@@ -2,7 +2,7 @@
   <div class="container mt-5">
     <div class="row">
       <div class="col-12">
-        <h2 class="section-title text-center mb-5">Mis Proyectos</h2>
+        <h2 class="section-title text-center mb-5" data-aos="fade-up">Mis Proyectos</h2>
       </div>
     </div>
     
@@ -10,7 +10,7 @@
     <div class="timeline">
       <div class="timeline-line"></div>
       
-      <div class="timeline-item" *ngFor="let project of projects; let i = index" [class.timeline-item-left]="i % 2 === 0" [class.timeline-item-right]="i % 2 === 1">
+      <div class="timeline-item" *ngFor="let project of projects; let i = index" [class.timeline-item-left]="i % 2 === 0" [class.timeline-item-right]="i % 2 === 1" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
         <div class="timeline-marker">
           <div class="timeline-dot"></div>
         </div>
