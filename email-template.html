@@ -1,0 +1,58 @@
+<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #ffffff;">
+    
+    <!-- Header con color -->
+    <div style="border-bottom: 3px solid #ec811b; padding-bottom: 15px; margin-bottom: 25px;">
+        <h1 style="margin: 0; color: #333; font-size: 24px; font-weight: bold;">
+            📧 Nuevo Mensaje de Contacto
+        </h1>
+    </div>
+    
+    <!-- Información del remitente -->
+    <div style="margin-bottom: 25px;">
+        <h2 style="margin: 0 0 10px 0; color: #333; font-size: 18px; font-weight: bold;">
+            De:
+        </h2>
+        <p style="margin: 0; color: #333; font-size: 16px; font-weight: bold;">
+            {{from_name}}
+        </p>
+        <p style="margin: 5px 0 0 0; color: #666; font-size: 14px;">
+            {{from_email}}
+        </p>
+    </div>
+    
+    <!-- Asunto -->
+    <div style="margin-bottom: 25px;">
+        <h2 style="margin: 0 0 10px 0; color: #333; font-size: 18px; font-weight: bold;">
+            Asunto:
+        </h2>
+        <p style="margin: 0; color: #333; font-size: 16px;">
+            {{subject}}
+        </p>
+    </div>
+    
+    <!-- Mensaje -->
+    <div style="margin-bottom: 25px;">
+        <h2 style="margin: 0 0 10px 0; color: #333; font-size: 18px; font-weight: bold;">
+            Mensaje:
+        </h2>
+        <div style="background-color: #f8f9fa; border-left: 4px solid #ec811b; padding: 15px; border-radius: 4px;">
+            <p style="margin: 0; color: #333; font-size: 15px; line-height: 1.5; white-space: pre-wrap;">{{message}}</p>
+        </div>
+    </div>
+    
+    <!-- Botón de responder -->
+    <div style="text-align: center; margin: 30px 0;">
+        <a href="mailto:{{from_email}}?subject=Re: {{subject}}" 
+           style="display: inline-block; background-color: #ec811b; color: #ffffff; text-decoration: none; padding: 12px 25px; border-radius: 5px; font-weight: bold; font-size: 14px;">
+            💬 Responder Mensaje
+        </a>
+    </div>
+    
+    <!-- Footer simple -->
+    <div style="border-top: 1px solid #ddd; padding-top: 15px; text-align: center;">
+        <p style="margin: 0; color: #666; font-size: 12px;">
+            Mensaje enviado desde tu formulario de contacto
+        </p>
+    </div>
+    
+</div>
