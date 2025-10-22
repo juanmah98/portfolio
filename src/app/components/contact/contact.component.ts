@@ -22,6 +22,7 @@ export class ContactComponent {
   showSuccess = false;
   showError = false;
   errorMessage = '';
+  cvUrl = 'https://drive.google.com/file/d/1zbwUxdBXXq_jvGDz_kXfHxTWyEIUehv6/view?usp=drive_link';
 
   // Configuración de EmailJS - Reemplaza con tus credenciales
   private readonly EMAILJS_SERVICE_ID = 'service_28da8jx';
@@ -80,5 +81,9 @@ export class ContactComponent {
   dismissAlert() {
     this.showSuccess = false;
     this.showError = false;
+  }
+
+  cv() {
+    window.open(this.cvUrl, '_blank');
   }
 }

@@ -13,3 +13,113 @@
 .btn:hover {
   transform: translateY(-2px);
 }
+
+// Estilos para el código
+.code-container {
+  background: #1e1e1e;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid #333;
+  position: relative;
+  overflow-x: auto;
+}
+
+.code-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: #2d2d2d;
+  border-radius: 8px 8px 0 0;
+  border-bottom: 1px solid #444;
+}
+
+.code-container::after {
+  content: '● ● ●';
+  position: absolute;
+  top: 8px;
+  left: 15px;
+  color: #666;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+pre {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  font-family: 'Fira Code', 'Monaco', 'Consolas', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #d4d4d4;
+  overflow-x: auto;
+  padding-top: 40px;
+}
+
+code {
+  background: transparent;
+  color: #d4d4d4;
+  font-family: 'Fira Code', 'Monaco', 'Consolas', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+// Sintaxis highlighting
+code {
+  .tag {
+    color: #569cd6;
+  }
+  
+  .attr-name {
+    color: #9cdcfe;
+  }
+  
+  .attr-value {
+    color: #ce9178;
+  }
+  
+  .string {
+    color: #ce9178;
+  }
+  
+  .keyword {
+    color: #569cd6;
+  }
+  
+  .function {
+    color: #dcdcaa;
+  }
+  
+  .class-name {
+    color: #4ec9b0;
+  }
+  
+  .comment {
+    color: #6a9955;
+    font-style: italic;
+  }
+}
+
+// Efecto de terminal
+.code-container:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .code-container {
+    padding: 1rem;
+    margin: 0.5rem 0;
+  }
+  
+  pre, code {
+    font-size: 12px;
+  }
+}
